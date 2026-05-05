@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
-
+import "./app.css"
 const PageInfo = ({ name }) => (
   <div className="flex items-center justify-center h-[80vh]">
     <h1 className="text-3xl font-bold text-slate-700">{name} Section Coming Soon</h1>

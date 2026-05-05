@@ -18,7 +18,7 @@ const menuItems = [
 
 export default function Sidebar({ closeMenu }) {
     return (
-        <aside className="left-0 top-0 w-64 h-screen bg-[#0f172a] border-r border-slate-800 flex flex-col z-50">
+        <aside className="left-0 top-0 w-64 h-full bg-[#0f172a] border-r border-slate-800 flex flex-col z-50">
             <div className="p-8">
                 <div className="flex items-center gap-2 group cursor-pointer">
                     <div className="p-2 bg-blue-600 rounded-lg group-hover:rotate-12 transition-transform shadow-lg shadow-blue-500/20">
