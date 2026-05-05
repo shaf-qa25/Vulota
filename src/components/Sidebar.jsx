@@ -8,7 +8,6 @@ import {
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
-// Store component references for better flexibility
 const menuItems = [
     { name: 'Dashboard', path: '/', icon: LayoutDashboard },
     { name: 'Analytics', path: '/analytics', icon: BarChart3 },
@@ -17,10 +16,9 @@ const menuItems = [
     { name: 'Terminal', path: '/terminal', icon: Terminal },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ closeMenu }) {
     return (
-        <aside className="fixed left-0 top-0 w-64 h-screen bg-[#0f172a] border-r border-slate-800 flex flex-col z-50">
-            {/* Brand Logo */}
+        <aside className="left-0 top-0 w-64 h-screen bg-[#0f172a] border-r border-slate-800 flex flex-col z-50">
             <div className="p-8">
                 <div className="flex items-center gap-2 group cursor-pointer">
                     <div className="p-2 bg-blue-600 rounded-lg group-hover:rotate-12 transition-transform shadow-lg shadow-blue-500/20">
@@ -41,6 +39,7 @@ export default function Sidebar() {
                         <NavLink
                             key={item.name}
                             to={item.path}
+                            onClick={closeMenu}
                             className={({ isActive }) => `
                 flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group
                 ${isActive
@@ -64,7 +63,6 @@ export default function Sidebar() {
                 })}
             </nav>
 
-            {/* User Section */}
             <div className="p-4 mt-auto border-t border-slate-800 bg-slate-900/20">
                 <div className="flex items-center gap-3 px-4 py-3 mb-2">
                     <div className="h-8 w-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-300">
