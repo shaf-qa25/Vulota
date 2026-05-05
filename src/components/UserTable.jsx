@@ -15,7 +15,6 @@ export default function UserTable() {
 
     return (
         <div className="bg-[#0f172a] rounded-2xl border border-slate-800 shadow-2xl overflow-hidden">
-            {/* Header - Stack on mobile */}
             <div className="p-4 md:p-6 border-b border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-900/20">
                 <div>
                     <h3 className="text-lg font-bold text-white">Operator Access Control</h3>
@@ -31,8 +30,7 @@ export default function UserTable() {
                     <thead className="bg-slate-800/30 text-slate-400 text-[11px] uppercase tracking-widest font-bold">
                         <tr>
                             <th className="p-4 whitespace-nowrap">Operator Details</th>
-                            {/* Hide Role and Status headers on very small screens if needed, 
-                                but table-cell keeps layout intact */}
+
                             <th className="p-4 whitespace-nowrap hidden md:table-cell">Security Role</th>
                             <th className="p-4 whitespace-nowrap">Status</th>
                             <th className="p-4 text-right">Actions</th>
@@ -51,7 +49,6 @@ export default function UserTable() {
                                             <span className="text-[10px] md:text-[11px] text-slate-500 font-mono uppercase truncate">
                                                 {user.email}
                                             </span>
-                                            {/* Mobile only role badge */}
                                             <span className="md:hidden mt-1 text-[9px] text-blue-400 font-bold">
                                                 {user.role || "Analyst"}
                                             </span>

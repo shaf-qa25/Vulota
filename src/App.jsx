@@ -2,10 +2,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import "./app.css"
+import EmptyState from './components/EmptyState';
+import ErrorPage from './pages/ErrorPage';
+
+
 const PageInfo = ({ name }) => (
-  <div className="flex items-center justify-center h-[80vh]">
-    <h1 className="text-3xl font-bold text-slate-700">{name} Section Coming Soon</h1>
-  </div>
+  <EmptyState
+    title={`${name} Module Empty`}
+    description={`We couldn't find any ${name.toLowerCase()} records in the database. Please check back later or try refreshing.`}
+    actionText="Sync Database"
+  />
 );
 
 function App() {
@@ -19,6 +25,7 @@ function App() {
           <Route path="users" element={<PageInfo name="Users" />} />
           <Route path="terminal" element={<PageInfo name="Terminal" />} />
         </Route>
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );
