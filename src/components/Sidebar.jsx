@@ -34,7 +34,7 @@ export default function Sidebar({ closeMenu }) {
                 </p>
 
                 {menuItems.map((item) => {
-                    const Icon = item.icon; // Capitalize to use as a component
+                    const Icon = item.icon;
                     return (
                         <NavLink
                             key={item.name}

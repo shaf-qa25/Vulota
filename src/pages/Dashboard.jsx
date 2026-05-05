@@ -17,7 +17,7 @@ export default function Dashboard() {
     }, []);
 
     return (
-        <div className="max-w-[1600px] mx-auto px-4 md:px-0">
+        <div className="max-w-[1600px] mx-auto px-4 md:px-0 ">
             <div className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                     <h1 className="text-xl md:text-2xl font-bold text-white">Security Command Center</h1>

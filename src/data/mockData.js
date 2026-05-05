@@ -1,7 +1,7 @@
 export const statsData = [
     { id: 1, title: "Total Threats", value: "1,284", trend: "+12%", status: "danger" },
     { id: 2, title: "Active Scans", value: "432", trend: "+5%", status: "normal" },
-    { id: 3, title: "Risk Score", value: "24/100", trend: "-2%", status: "safe" },
+    { id: 3, title: "Risk Score", value: "24", trend: "-2%", status: "safe" },
     { id: 4, title: "System Uptime", value: "99.9%", trend: "Stable", status: "safe" },
 ];
 

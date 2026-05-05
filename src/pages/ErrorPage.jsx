@@ -1,6 +1,4 @@
 
-
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -60,7 +58,7 @@ export default function ErrorPage() {
 
                         <button
                             onClick={() => navigate('/')}
-                            className="w-full sm:w-auto flex items-center justify-center gap-3 px-6 md:px-10 py-3 md:py-4 bg-red-500 text-white rounded-full hover:bg-red-500 transition-all shadow-lg shadow-red-600/30 active:scale-95 text-base md:text-lg font-medium"
+                            className="w-full sm:w-auto flex items-center justify-center gap-3 px-6 md:px-10 py-3 md:py-4 bg-red-00 text-white rounded-full hover:bg-red-500 transition-all shadow-lg shadow-red-600/30 active:scale-95 text-base md:text-lg font-medium"
                         >
                             <Home size={18} className="md:size-5" />
                             Dashboard
