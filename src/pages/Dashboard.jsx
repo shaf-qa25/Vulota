@@ -18,83 +18,89 @@ export default function Dashboard() {
     }, []);
 
     return (
-        <div className="relative min-h-screen">
+        <div className="relative min-h-screen w-full overflow-x-hidden selection:bg-blue-500/30">
             <div className="fixed inset-0 z-0">
                 <Grainient
-                    color1="#5b6aa9"
-                    color2="#57617e"
-                    color3="#676a77"
-                    timeSpeed={0.25}
-                    colorBalance={0}
-                    warpStrength={1}
-                    warpFrequency={5}
-                    warpSpeed={2}
-                    warpAmplitude={50}
-                    blendAngle={0}
-                    blendSoftness={0.05}
-                    rotationAmount={500}
-                    noiseScale={2}
-                    grainAmount={0.1}
-                    grainScale={2}
-                    grainAnimated={false}
-                    contrast={1.5}
-                    gamma={1}
-                    saturation={1}
-                    centerX={0}
-                    centerY={0}
-                    zoom={0.9}
+                    color1="#1e293b"
+                    color2="#334155"
+                    color3="#0f172a"
+                    timeSpeed={0.15}
+                    warpStrength={0.8}
+                    noiseScale={1.5}
+                    grainAmount={0.05}
+                    contrast={1.2}
                 />
             </div>
 
-            <div className="relative z-10 max-w-[1600px] mx-auto p-2">
-                <div className="mb-8 flex justify-between items-center bg-white/30 backdrop-blur-md p-6 rounded-2xl border border-white/50">
-                    <div>
-                        <h1 className="text-2xl font-bold text-slate-900">Security Command Center</h1>
-                        <p className="text-slate-800 text-sm">Monitoring real-time threats and system integrity.</p>
-                    </div>
-                    <div className="text-right text-sm font-mono text-slate-900">
-                        SYSTEM STATUS: <span className="text-green-900">OPTIMAL</span>
-                    </div>
-                </div>
+            <main className="relative z-10 w-full max-w-[1600px] mx-auto p-4 md:p-6 lg:p-4">
 
-                <div className="grid grid-cols-4 gap-4 mb-6">
+                <header className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white/5 backdrop-blur-xl p-6 rounded-3xl border border-white/10 shadow-2xl">
+                    <div>
+                        <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+                            Security <span className="text-blue-400">Command Center</span>
+                        </h1>
+                        <p className="text-slate-400 text-sm mt-1">Real-time threat monitoring & system integrity.</p>
+                    </div>
+                    <div className="flex items-center gap-3 bg-slate-900/50 px-4 py-2 rounded-full border border-white/5">
+                        <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                        <span className="text-xs font-mono text-green-400 uppercase tracking-widest">System Optimal</span>
+                    </div>
+                </header>
+
+                <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                     {isLoading ? (
-                        [1, 2, 3, 4].map((i) => <Skeleton key={i} className="h-28 rounded-2xl" />)
+                        [1, 2, 3, 4].map((i) => <Skeleton key={i} className="h-32 rounded-2xl bg-white/5" />)
                     ) : (
                         statsData.map(stat => <StatCard key={stat.id} {...stat} />)
                     )}
-                </div>
+                </section>
 
-                <div className="grid grid-cols-3 gap-6 mb-6">
-                    <div className="col-span-2">
-                        {isLoading ? <Skeleton className="h-[380px] rounded-2xl" /> : <MainChart />}
+                <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <div className="lg:col-span-2 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-1">
+                        {isLoading ? <Skeleton className="h-[400px] rounded-3xl" /> : <MainChart />}
                     </div>
-                    <div className="col-span-1">
-                        {isLoading ? <Skeleton className="h-[380px] rounded-2xl" /> : <RiskGauge score={24} />}
+                    <div className="lg:col-span-1">
+                        {isLoading ? <Skeleton className="h-[400px] rounded-3xl" /> : <RiskGauge score={24} />}
                     </div>
-                </div>
+                </section>
 
-                <div className="grid grid-cols-3 gap-6 mb-6">
-                    <div className="col-span-1">
-                        {isLoading ? <Skeleton className="h-[300px] rounded-2xl" /> : <AttackLog />}
+                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <div className="h-full">
+                        {isLoading ? <Skeleton className="h-[350px] rounded-3xl" /> : <AttackLog />}
                     </div>
-                    <div className="col-span-1">
-                        {isLoading ? <Skeleton className="h-[300px] rounded-2xl" /> : <SecurityInsights />}
+                    <div className="h-full">
+                        {isLoading ? <Skeleton className="h-[350px] rounded-3xl" /> : <SecurityInsights />}
                     </div>
-                    <div className="col-span-1 bg-[#1E293B] rounded-2xl border border-slate-800 p-6 shadow-xl">
-                        <h3 className="font-bold mb-4 text-white">Quick Actions</h3>
+
+                    <div className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl border border-blue-500/20 p-6 shadow-xl flex flex-col justify-between">
+                        <div>
+                            <h3 className="text-lg font-bold text-white mb-2">Quick Actions</h3>
+                            <p className="text-slate-400 text-xs mb-6">Execute system-wide security protocols.</p>
+                        </div>
                         <div className="space-y-3">
-                            <button className="w-full py-2 bg-blue-600/20 text-blue-400 border border-blue-600/30 rounded-lg text-sm hover:bg-blue-600 hover:text-white transition-all">Scan Network</button>
-                            <button className="w-full py-2 bg-slate-800 text-slate-300 rounded-lg text-sm hover:bg-slate-700 transition-all border border-slate-700">Flush DNS</button>
-                            <button className="w-full py-2 bg-slate-800 text-slate-300 rounded-lg text-sm hover:bg-slate-700 transition-all border border-slate-700">Update Firewall</button>
+                            <button className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-semibold transition-all shadow-lg shadow-blue-600/20 active:scale-[0.98]">
+                                Scan Network
+                            </button>
+                            <button className="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-sm font-semibold transition-all border border-slate-700 active:scale-[0.98]">
+                                Flush DNS Cache
+                            </button>
+                            <button className="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-sm font-semibold transition-all border border-slate-700 active:scale-[0.98]">
+                                Update Firewall
+                            </button>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div className="mt-6 mb-10">
-                    {isLoading ? <Skeleton className="h-64 rounded-2xl" /> : <UserTable />}
-                </div>
-            </div>
+                <section className="mb-12 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 overflow-hidden">
+                    <div className="p-6 border-b border-white/10">
+                        <h3 className="text-lg font-bold text-white">Active User Sessions</h3>
+                    </div>
+                    <div className="overflow-x-auto">
+                        {isLoading ? <Skeleton className="h-80 w-full" /> : <UserTable />}
+                    </div>
+                </section>
+
+            </main>
         </div>
     );
 }

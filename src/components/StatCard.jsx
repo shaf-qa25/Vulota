@@ -18,7 +18,8 @@ function AnimatedNumber({ value }) {
         return () => controls.stop();
     }, [numericValue]);
 
-    return <motion.h3 className="text-2xl md:text-3xl font-bold group-hover:text-blue-500 transition-colors">{displayValue}</motion.h3>;
+    // Added 'break-all' for very long numbers on small screens
+    return <motion.h3 className="text-xl sm:text-2xl md:text-3xl font-bold group-hover:text-blue-500 transition-colors break-all">{displayValue}</motion.h3>;
 }
 
 export default function StatCard({ title, value, trend, status }) {
@@ -28,16 +29,20 @@ export default function StatCard({ title, value, trend, status }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="bg-[#0f172a] p-4 md:p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all group shadow-lg"
+            // Added w-full and min-w-0 for grid stability
+            className="bg-[#0f172a] p-4 md:p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all group shadow-lg w-full min-w-0"
         >
-            <p className="text-slate-400 text-xs md:text-sm font-medium mb-2 truncate">{title}</p>
+            <p className="text-slate-400 text-[10px] sm:text-xs md:text-sm font-medium mb-2 truncate" title={title}>{title}</p>
 
-            <div className="flex justify-between items-end gap-2">
-                <AnimatedNumber value={value} />
+            {/* Changed flex-row to flex-wrap for very narrow screens */}
+            <div className="flex flex-wrap justify-between items-end gap-2">
+                <div className="min-w-0 flex-1">
+                    <AnimatedNumber value={value} />
+                </div>
 
-                <span className={`text-[10px] md:text-xs px-2 py-1 rounded-lg font-mono whitespace-nowrap ${status === 'danger'
-                        ? 'bg-red-500/10 text-red-400 border border-red-500/20'
-                        : 'bg-green-500/10 text-green-400 border border-green-500/20'
+                <span className={`text-[10px] md:text-xs px-2 py-1 rounded-lg font-mono whitespace-nowrap mb-1 ${status === 'danger'
+                    ? 'bg-red-500/10 text-red-400 border border-red-500/20'
+                    : 'bg-green-500/10 text-green-400 border border-green-500/20'
                     }`}>
                     {trend}
                 </span>
