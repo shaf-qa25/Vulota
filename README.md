@@ -1,82 +1,67 @@
-🛡️ Vulota - Advanced Cybersecurity Dashboard
-Vulota (Comapiens) is a high-performance, offensive security-focused dashboard built for real-time monitoring and threat analysis. Designed with a sleek, dark-themed interface, it prioritizes data visualization and seamless user experience for security engineers.
+# 🛡️Vulota Dashboard (Assignment)
 
-✨ Key Features
-1. Core Modules
-Command Dashboard: A bird's-eye view of the system state with high-impact metric cards (Total Users, Threats Neutralized, Active Sessions, and System Risk Score).
+A modern cybersecurity dashboard built as part of the Vulota frontend assignment.  
+Focused on clean UI, data visualization, and modular component design.
 
-Neural Analytics: Real-time data visualization using Recharts. Includes:
+---
 
-Activity Over Time: High-precision line charts for traffic monitoring.
+## 🚀 Live Demo
+https://vulota.vercel.app/
 
-Threat Distribution: Bar charts categorizing vulnerability types.
+## 💻 GitHub
+https://github.com/shaf-qa25/Vulota
 
-User Command Center: A robust management table with:
+---
 
-Status toggles (Active/Blocked).
+## ✨ Features
 
-Optimized data rendering with "View All" toggle for large datasets.
+- **Dashboard Overview**
+  - Key metrics (Users, Threats, Sessions, Risk Score)
+  - Clean card-based layout
 
-Offensive Security Insights:
+- **Analytics**
+  - Activity over time (line chart)
+  - Threat distribution (bar chart)
 
-Dynamic Risk Level Indicators (Low/Medium/High).
+- **User Management**
+  - User table with status toggle (Active/Blocked)
+  - Optimized rendering for larger datasets
 
-Recent Alerts feed with severity-based styling.
+- **Security Insights**
+  - Risk level indicator (Low / Medium / High)
+  - Recent alerts
+  - Basic security recommendations
 
-AI-driven security recommendations for threat mitigation.
+---
 
-2. Technical Excellence & UX
-Cyber-Sentry 404 (Easter Egg): A custom-designed Error Page featuring the EvilEye (WebGL) component. It uses ogl and cursor-tracking to create an immersive "Neural-Net surveillance" feel.
+## 🧱 Tech Stack
 
-Responsive Framework: Fully adaptive layout that transitions seamlessly from widescreen monitors to mobile devices.
+- React (Vite)
+- Tailwind CSS
+- Recharts
+- Framer Motion
+- Lucide Icons
 
-Micro-Animations: Implemented Framer Motion for smooth transitions and hover states, giving it a premium SaaS feel.
+---
 
-Performance Optimized: Used useMemo for heavy data computations and Context API for global state management.
+## 🧠 Approach
 
-🛠️ Tech Stack
-Framework: React.js (Vite)
+- Focused on **clean, consistent UI** with a dark cybersecurity theme  
+- Built **reusable components** (cards, charts, table)  
+- Prioritized **readability, spacing, and responsiveness**  
+- Used **dummy data** to simulate real dashboard behavior  
 
-Styling: Tailwind CSS (Mobile-First approach)
+---
 
-Graphics/WebGL: ogl (for EvilEye component)
+## ⚠️ Note
 
-Charts: Recharts
+This is a frontend demo built for assignment purposes.  
+No real user data is used.
 
-Icons: Lucide-React
+---
 
-Animation: Framer Motion
+## 🛠️ Run Locally
 
-📂 Project Structure
-Plaintext
-src/
-├── components/
-│   ├── Layout/          # Sidebar, Navbar, and Container
-│   ├── UI/              # Reusable Cards, Tables, Buttons
-│   ├── Charts/          # Line and Bar chart wrappers
-│   └── EvilEye/         # Custom WebGL surveillance component
-├── pages/
-│   ├── Dashboard/       # Main Overview
-│   ├── Analytics/       # Detailed reporting
-│   ├── UserManagement/  # User list and actions
-│   └── ErrorPage/       # Interactive 404 Page
-├── data/                # Mock JSON datasets
-└── App.jsx              # Routing and Global Logic
-🚀 Installation & Setup
-Clone the repository:
-
-Bash
-git clone https://github.com/shaf-qa25/Vulota.git
-Install dependencies:
-
-Bash
-npm install ogl framer-motion lucide-react recharts react-router-dom
-Run the development server:
-
-Bash
-   npm run dev
-🛡️ Security Note
-This project is a demo developed for the Vulota Hiring Team assignment. It utilizes dummy data to demonstrate frontend proficiency and does not process real user information.
-
-💡 My Approach
-I treated this assignment as a real-world production task. My focus was on component modularity and thematic consistency. The addition of the WebGL "EvilEye" in the Error Page demonstrates my ability to integrate complex libraries into a standard React environment to enhance the brand identity of a cybersecurity tool.
+```bash
+npm install
+npm run dev
