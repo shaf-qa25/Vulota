@@ -2,7 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import EvilEye from '../components/EvilEye';
+import EvilEye from '../components/ui/EvilEye';
 import { Home, ArrowLeft } from 'lucide-react';
 
 export default function ErrorPage() {
